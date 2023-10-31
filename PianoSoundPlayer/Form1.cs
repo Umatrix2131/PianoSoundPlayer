@@ -46,7 +46,7 @@ namespace PianoSoundPlayer
             var Cl = this;
             int Start = 10;
             int End = Cl.Width;
-            var KeyString = StaticKeyString.Where((s, i) => i >= Start && i < End).ToArray();
+            var KeyString = StaticKeyString;
             double WidthP = (Cl.Width - 20) / (double)KeyString.Where(s => s.IndexOf("#") < 0).Count();
             double HeightP = Cl.Height-50;
 
@@ -73,7 +73,7 @@ namespace PianoSoundPlayer
                     PB.Height = (int)HeightP / 2;
                     PB.Location = new Point((int)(xOffset - WidthP / 2d), 0);
                 }
-                PB.Tag = i + Start;
+                PB.Tag = i;
 
 
                 PB.Image = new Bitmap(PB.Width, PB.Height);
