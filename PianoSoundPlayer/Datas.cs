@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NAudio.Wave;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,20 @@ using System.Threading.Tasks;
 
 namespace PianoSoundPlayer
 {
+    public class AudioDataSet
+    {
+        public List<int> LR;
+        public WaveFormat waveFormat;
+    }
+    public class BufferDataSet
+    {
+        public List<int> LR = new List<int>();
+        public int ReleaseStart = 0;
+        public int ReleaseEnd = -1;
+        public bool KeyReleased = false;
+        public int Offset;
+        public int KeyIndex;
+    }
     public class Datas
     {
         public static string Keylogger = @"A0-27.50000
